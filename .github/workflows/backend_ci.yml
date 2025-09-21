@@ -8,10 +8,13 @@ on:
   # Manual trigger
   workflow_dispatch:
 
-  # Automatically on pushes to main branch
-  push:
+  # Automatically on pushes to main branch and on pull requests to development
+  pull_request:
     branches:
       - development
+  push:
+    branches:
+      - main
     paths: # Only trigger if changes are in backend directories
       - 'backend/**'
       - '.github/workflows/backend_ci.yml' # Trigger if this workflow file changes

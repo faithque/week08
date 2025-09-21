@@ -15,6 +15,14 @@ on:
         description: 'Name of ACR'
         required: true
         default: 'wee08app'
+  
+  # You can also trigger this workflow on pull requests to development or pushes to main
+  pull_request:
+    branches:
+      - development
+  push:
+    branches:
+      - main
 
 jobs:
   deploy_backend:
